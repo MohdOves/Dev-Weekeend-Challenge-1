@@ -14,6 +14,15 @@ Recipes are sample suggestions, not medical advice. Always check ingredient labe
 
 **Live demo:** <!-- Add your deployed demo URL here -->
 
+### Deploy on Render
+
+This repository includes a [`render.yaml`](./render.yaml) Blueprint for the static site. To deploy it:
+
+1. Sign in to [Render](https://render.com/) and choose **New → Blueprint**.
+2. Connect GitHub and select `MohdOves/Dev-Weekeend-Challenge-1`.
+3. Review the `gather-meal-planner` static site and choose **Apply**.
+4. When the deploy finishes, copy the Render URL into the Live demo field above.
+
 ## Code
 
 **GitHub repository:** [MohdOves/Dev-Weekeend-Challenge-1](https://github.com/MohdOves/Dev-Weekeend-Challenge-1)
