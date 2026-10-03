@@ -1,0 +1,234 @@
+:root {
+  color-scheme: light;
+  --ink: #263b31;
+  --muted: #7f8981;
+  --line: #e9e9e2;
+  --green: #527d61;
+  --green-dark: #365d46;
+  --soft-green: #eaf1e9;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: #f7f6f2; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+.app-shell { min-height: 100vh; }
+.sidebar { position: fixed; inset: 0 auto 0 0; z-index: 2; width: 242px; padding: 29px 20px 20px; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #efefe9; }
+.brand { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 56px 4px; width: fit-content; font: 800 23px/1 "Manrope", sans-serif; letter-spacing: -1.3px; }
+.brand-mark { display: grid; place-items: center; width: 33px; height: 33px; color: white; background: var(--green); border-radius: 11px 11px 11px 4px; font: 800 22px/1 "Manrope", sans-serif; }
+.brand-period { color: #df9660; }
+.side-label, .section-kicker { color: #98a098; font-size: 9px; font-weight: 700; letter-spacing: 1.4px; }
+.side-label { padding-left: 11px; margin-bottom: 13px; }
+.main-nav { display: grid; gap: 5px; }
+.nav-item { display: flex; align-items: center; gap: 12px; min-height: 43px; padding: 0 11px; color: #737f76; border-radius: 8px; font-size: 12px; font-weight: 600; transition: background .2s, color .2s; }
+.nav-item:hover { color: var(--green-dark); background: #f7f8f5; }
+.nav-item.active { color: var(--green-dark); background: #eef3ed; }
+.nav-icon { width: 18px; font-size: 17px; line-height: 1; text-align: center; }
+.sidebar-spacer { flex: 1; min-height: 42px; }
+.side-tip { position: relative; padding: 17px 15px 18px; margin-bottom: 22px; background: #f8f5eb; border: 1px solid #f0ecdf; border-radius: 10px; }
+.side-tip p { margin: 12px 0 6px; color: #45594a; font: 700 13px/1.55 "Manrope", sans-serif; }
+.side-tip > span:last-child { display: block; max-width: 155px; color: #8a8b79; font-size: 10px; line-height: 1.6; }
+.tip-spark { color: #d99659; font-size: 18px; }
+.profile-mini { display: flex; align-items: center; gap: 10px; padding: 14px 2px 0; border-top: 1px solid #efefe9; }
+.profile-mini { border-radius: 6px; transition: background .15s; }
+.profile-mini:hover { background: #f8f9f6; }
+.avatar { display: grid; place-items: center; width: 32px; height: 32px; flex: 0 0 auto; color: #537259; background: #e7efe4; border-radius: 50%; font-weight: 700; font-size: 12px; }
+.profile-mini strong, .profile-mini span { display: block; }
+.profile-mini strong { font-size: 10px; font-weight: 700; }
+.profile-mini div:nth-child(2) span { margin-top: 3px; color: #99a098; font-size: 9px; }
+.profile-edit { margin-left: auto; color: #66836a; font-size: 9px; font-weight: 600; white-space: nowrap; }
+.main-content { min-height: 100vh; margin-left: 242px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; height: 62px; padding: 0 clamp(24px, 5.3vw, 76px); background: rgba(255,255,255,.68); border-bottom: 1px solid #edede7; }
+.breadcrumb { color: #a0a69f; font-size: 10px; }
+.breadcrumb span { padding: 0 8px; color: #c7cbc4; }
+.breadcrumb strong { color: #56645a; font-weight: 600; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+.week-label { color: #78847a; font-size: 10px; font-weight: 600; }
+.page-wrap { max-width: 1210px; padding: 0 clamp(24px, 5.3vw, 76px); margin: 0 auto; }
+.welcome-row { position: relative; display: flex; align-items: center; justify-content: space-between; min-height: 190px; overflow: hidden; }
+.eyebrow { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; color: #858f86; font-size: 10px; font-weight: 600; }
+.eyebrow-dot { width: 6px; height: 6px; background: #e4a26b; border-radius: 50%; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 9px; color: #293e32; font: 700 clamp(30px, 3.5vw, 41px)/1.15 "Manrope", sans-serif; letter-spacing: -1.8px; }
+h1 em, .inspiration-panel h2 em { color: #759376; font-style: normal; }
+.intro { margin-bottom: 0; color: #818a82; font-size: 12px; }
+.welcome-art { position: absolute; top: 13px; right: 1%; width: 190px; height: 160px; }
+.art-sun { position: absolute; top: 0; right: 22px; width: 76px; height: 76px; background: #f8e4c5; border-radius: 50%; }
+.art-plate { position: absolute; top: 39px; right: 47px; display: grid; place-items: center; width: 99px; height: 99px; background: #fffefa; border: 1px solid #eee9db; border-radius: 50%; box-shadow: 0 8px 22px #53604412; }
+.art-plate span { width: 65px; height: 65px; background: #d7e1c7; border: 8px solid #f4f0e4; border-radius: 50%; }
+.art-leaf { position: absolute; z-index: 1; width: 32px; height: 16px; background: #7b9975; border-radius: 100% 0 100% 0; transform: rotate(-23deg); }
+.leaf-one { top: 69px; right: 83px; }
+.leaf-two { top: 88px; right: 58px; background: #9daf81; transform: rotate(49deg); }
+.art-dot { position: absolute; top: 106px; right: 128px; width: 11px; height: 11px; background: #e99a62; border-radius: 50%; }
+.allergy-banner { display: flex; align-items: center; gap: 13px; min-height: 64px; padding: 12px 18px; background: #edf3e9; border: 1px solid #e4ebdf; border-radius: 9px; }
+.shield-icon { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 auto; color: #527b5b; background: #dce9d8; border-radius: 9px; font-size: 14px; font-weight: 700; }
+.banner-copy { display: grid; gap: 3px; }
+.banner-copy strong { color: #3c5a43; font-size: 11px; }
+.banner-copy span { color: #788879; font-size: 10px; }
+.banner-link { margin-left: auto; color: #52775a; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.banner-link span { padding-left: 5px; font-size: 14px; }
+.planner-section { padding-top: 39px; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 17px; }
+.section-heading h2, .panel-heading h2 { margin: 7px 0 0; font: 700 21px/1.2 "Manrope", sans-serif; letter-spacing: -.7px; }
+.plan-actions { display: flex; align-items: center; gap: 8px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 34px; padding: 0 13px; border-radius: 7px; cursor: pointer; font-size: 10px; font-weight: 600; transition: transform .15s, background .15s; }
+.button:active { transform: translateY(1px); }
+.button-quiet { color: #778279; background: transparent; border: 1px solid #e5e7e0; }
+.button-quiet:hover { background: #fff; }
+.button-primary { color: white; background: #547b5d; border: 1px solid #547b5d; box-shadow: 0 3px 8px #355f4518; }
+.button-primary:hover { background: #426b4d; }
+.button-primary span { color: #d7e8ce; }
+.plan-summary { display: flex; align-items: center; gap: 9px; min-height: 37px; padding: 0 12px; margin-bottom: 10px; color: #838d83; background: #f0efe8; border-radius: 6px; font-size: 9px; }
+.summary-icon { color: #d29b61; font-size: 12px; }
+.summary-spacer { flex: 1; }
+.safe-label { display: inline-flex; align-items: center; gap: 5px; color: #718270; font-size: 9px; }
+.safe-label span, .saved-indicator span { width: 6px; height: 6px; background: #80a47e; border-radius: 50%; }
+.week-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.day-card { min-width: 0; min-height: 163px; padding: 11px 9px 10px; background: #fff; border: 1px solid #ecece6; border-radius: 8px; transition: border-color .2s, box-shadow .2s; }
+.day-card:hover { border-color: #d4e0d1; box-shadow: 0 4px 14px #3d5e3d0b; }
+.day-card.today { border-color: #b6cdb5; }
+.day-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 9px; border-bottom: 1px solid #f0f0eb; }
+.day-name { color: #57665b; font-size: 9px; font-weight: 700; }
+.day-date { display: grid; place-items: center; min-width: 20px; height: 20px; color: #8d978e; background: #f7f7f3; border-radius: 50%; font-size: 8px; }
+.today .day-date { color: #fff; background: #719273; }
+.meal-type { margin: 11px 0 6px; color: #a2a9a1; font-size: 8px; letter-spacing: .6px; text-transform: uppercase; }
+.meal-title { display: -webkit-box; min-height: 32px; margin: 0 0 8px; overflow: hidden; color: #3f5144; font: 700 10px/1.5 "Manrope", sans-serif; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.meal-meta { display: flex; align-items: center; gap: 4px; color: #8b958b; font-size: 8px; }
+.meal-meta .meta-dot { width: 3px; height: 3px; background: #d9a06d; border-radius: 50%; }
+.swap-button { display: flex; align-items: center; gap: 4px; padding: 0; margin-top: 10px; color: #66836a; background: none; border: 0; cursor: pointer; font-size: 8px; font-weight: 600; }
+.swap-button:hover { color: #355d40; }
+.empty-meal { display: grid; place-items: center; min-height: 95px; color: #a2aba2; text-align: center; }
+.empty-meal span { display: block; font-size: 20px; }
+.empty-meal button { padding: 0; margin-top: 5px; color: #728d73; background: none; border: 0; cursor: pointer; font-size: 9px; }
+.bottom-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(230px, .82fr); gap: 14px; margin-top: 31px; }
+.profile-panel, .inspiration-panel { min-width: 0; padding: 20px; background: #fff; border: 1px solid #ecece6; border-radius: 9px; }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; }
+.panel-heading h2 { font-size: 17px; }
+.panel-emoji { display: grid; place-items: center; width: 33px; height: 33px; background: #faf3e8; border-radius: 10px; font-size: 17px; }
+.panel-description { max-width: 440px; margin: 11px 0 14px; color: #879087; font-size: 10px; line-height: 1.6; }
+.allergy-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 7px; padding: 0; margin: 0; border: 0; }
+.allergy-option { position: relative; display: flex; align-items: center; gap: 7px; min-height: 29px; padding: 0 8px; color: #69746b; background: #fafaf7; border: 1px solid #efefe9; border-radius: 6px; cursor: pointer; font-size: 9px; transition: border-color .15s, background .15s; }
+.allergy-option:hover { border-color: #ccdbca; }
+.allergy-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.checkmark { display: grid; place-items: center; width: 12px; height: 12px; flex: 0 0 auto; background: white; border: 1px solid #dce1da; border-radius: 3px; }
+.allergy-option input:checked + .checkmark { background: #628267; border-color: #628267; }
+.allergy-option input:checked + .checkmark::after { width: 5px; height: 3px; border-bottom: 1.5px solid white; border-left: 1.5px solid white; content: ""; transform: rotate(-45deg) translateY(-1px); }
+.allergy-option:has(input:checked) { color: #45664a; background: #f0f5ed; border-color: #d9e5d5; }
+.allergy-option input:focus-visible + .checkmark { outline: 2px solid #87a68b; outline-offset: 2px; }
+.profile-foot { display: flex; justify-content: space-between; gap: 8px; padding-top: 12px; margin-top: 12px; color: #919a91; border-top: 1px solid #f0f0eb; font-size: 9px; }
+.saved-indicator { display: inline-flex; align-items: center; gap: 5px; color: #829082; }
+.saved-indicator span { width: 5px; height: 5px; }
+.allergy-note { margin: 12px 0 0; color: #999b8d; font-size: 8px; line-height: 1.6; }
+.allergy-note strong { color: #858a7c; }
+.inspiration-panel { position: relative; min-height: 282px; overflow: hidden; background: #f4f2e9; border-color: #efede2; }
+.inspiration-top { display: flex; align-items: center; justify-content: space-between; }
+.inspiration-spark { color: #dc9d5e; font-size: 17px; }
+.inspiration-panel h2 { position: relative; z-index: 1; margin: 15px 0 9px; color: #425644; font: 700 19px/1.35 "Manrope", sans-serif; letter-spacing: -.6px; }
+.inspiration-panel > p { position: relative; z-index: 1; max-width: 240px; margin: 0; color: #858b7b; font-size: 9px; line-height: 1.7; }
+.browse-recipes { position: relative; z-index: 2; margin-top: 13px; }
+.ingredient-art { position: absolute; right: 4px; bottom: 17px; width: 140px; height: 87px; }
+.tomato { position: absolute; bottom: 18px; left: 34px; display: grid; place-items: center; width: 42px; height: 42px; color: #d97f57; background: #da8055; border: 7px solid #efb394; border-radius: 50%; font-size: 0; }
+.herb { position: absolute; right: 25px; bottom: 27px; color: #73906c; font-size: 32px; transform: rotate(-18deg); }
+.lemon { position: absolute; right: 57px; bottom: 9px; width: 27px; height: 18px; color: transparent; background: #e9c675; border-radius: 50%; transform: rotate(30deg); }
+.ingredient-caption { position: absolute; right: 10px; bottom: 0; color: #a09e8d; font: italic 9px Georgia, serif; }
+.idea-count { position: absolute; right: 17px; bottom: 17px; left: 17px; padding-top: 10px; color: #839082; border-top: 1px solid #e8e5d9; font-size: 9px; }
+.idea-count span { color: #4d6e50; font-weight: 700; }
+.page-footer { display: flex; justify-content: space-between; padding: 22px 0 28px; color: #a0a69c; font-size: 9px; }
+.footer-dot { padding: 0 4px; color: #d09b68; }
+.toast { position: fixed; z-index: 5; right: 24px; bottom: 22px; max-width: calc(100vw - 32px); padding: 11px 16px; color: #fff; background: #3d6247; border-radius: 7px; box-shadow: 0 6px 20px #263b312b; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .2s, transform .2s; font-size: 11px; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.recipe-dialog { width: min(620px, calc(100vw - 30px)); max-height: min(82vh, 720px); padding: 22px; color: var(--ink); background: #fff; border: 1px solid #e9e9e2; border-radius: 13px; box-shadow: 0 18px 70px #263b3130; }
+.recipe-dialog::backdrop { background: #263b3170; backdrop-filter: blur(2px); }
+.dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.dialog-header h2 { margin: 6px 0 0; font: 700 23px/1.2 "Manrope", sans-serif; letter-spacing: -.7px; }
+.dialog-close { display: grid; place-items: center; width: 30px; height: 30px; padding: 0; color: #6e7e70; background: #f5f6f2; border: 1px solid #e9ece6; border-radius: 7px; cursor: pointer; font-size: 20px; }
+.dialog-description { margin: 11px 0 14px; color: #818a82; font-size: 11px; line-height: 1.6; }
+.recipe-list { display: grid; max-height: 56vh; overflow-y: auto; border-top: 1px solid #eeefe9; }
+.recipe-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eeefe9; }
+.recipe-item-copy { min-width: 0; }
+.recipe-item-copy h3 { margin: 0 0 4px; color: #405344; font: 700 12px/1.3 "Manrope", sans-serif; }
+.recipe-item-copy p { margin: 0 0 4px; overflow: hidden; color: #879087; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.recipe-item-copy > span { color: #9a9f97; font-size: 9px; text-transform: capitalize; }
+.recipe-item-action { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.recipe-item-action select { max-width: 138px; min-height: 32px; padding: 0 6px; color: #657267; background: #fbfbf8; border: 1px solid #e5e8e1; border-radius: 6px; font-size: 9px; }
+.recipe-item-action .button { min-height: 32px; }
+@media (min-width: 1450px) { .page-wrap { padding-right: 80px; padding-left: 80px; } }
+@media (max-width: 1120px) {
+  .sidebar { width: 210px; }
+  .main-content { margin-left: 210px; }
+  .page-wrap { padding-right: 28px; padding-left: 28px; }
+  .topbar { padding-right: 28px; padding-left: 28px; }
+  .week-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .day-card { min-height: 150px; }
+}
+@media (max-width: 760px) {
+  .sidebar { position: sticky; top: 0; inset: 0 0 auto; width: 100%; height: 60px; padding: 0 17px; flex-direction: row; align-items: center; justify-content: space-between; border-right: 0; border-bottom: 1px solid #efefe9; }
+  .brand { margin: 0; font-size: 20px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .side-label, .sidebar-spacer, .side-tip, .profile-mini { display: none; }
+  .main-nav { display: flex; gap: 2px; }
+  .nav-item { min-height: 36px; gap: 6px; padding: 0 9px; font-size: 10px; }
+  .nav-icon { width: auto; font-size: 14px; }
+  .main-content { margin-left: 0; }
+  .topbar { height: 49px; padding: 0 19px; }
+  .page-wrap { padding: 0 19px; }
+  .welcome-row { min-height: 164px; }
+  .welcome-art { right: -38px; opacity: .78; transform: scale(.76); transform-origin: right center; }
+  .welcome-row > div:first-child { position: relative; z-index: 1; max-width: 75%; }
+  h1 { font-size: 32px; }
+  .intro { max-width: 270px; font-size: 11px; line-height: 1.55; }
+  .allergy-banner { align-items: flex-start; padding: 12px; gap: 9px; }
+  .banner-copy span { max-width: 310px; line-height: 1.5; }
+  .banner-link { align-self: center; font-size: 9px; }
+  .planner-section { padding-top: 30px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { font-size: 19px; }
+  .plan-actions { gap: 6px; }
+  .button { min-height: 32px; padding: 0 9px; font-size: 9px; }
+  .week-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bottom-grid { grid-template-columns: 1fr; margin-top: 25px; }
+  .inspiration-panel { min-height: 245px; }
+  .ingredient-art { right: 20px; bottom: 20px; transform: scale(1.05); transform-origin: bottom right; }
+}
+@media (max-width: 480px) {
+  .sidebar { height: 56px; padding: 0 12px; }
+  .brand { gap: 7px; font-size: 18px; }
+  .brand-mark { width: 27px; height: 27px; font-size: 19px; }
+  .nav-item { width: 34px; justify-content: center; padding: 0; font-size: 0; }
+  .nav-icon { font-size: 16px; }
+  .topbar { padding: 0 15px; }
+  .page-wrap { padding: 0 15px; }
+  .welcome-row { min-height: 152px; }
+  .welcome-art { right: -61px; opacity: .56; transform: scale(.65); }
+  .welcome-row > div:first-child { max-width: 84%; }
+  h1 { font-size: 29px; }
+  .eyebrow { font-size: 9px; }
+  .intro { max-width: 245px; font-size: 10px; }
+  .banner-copy strong { font-size: 10px; }
+  .banner-copy span { font-size: 9px; }
+  .banner-link { max-width: 84px; font-size: 8px; line-height: 1.4; white-space: normal; }
+  .section-heading { flex-direction: column; gap: 12px; }
+  .plan-actions { width: 100%; }
+  .plan-actions .button-primary { flex: 1; }
+  .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .day-card { min-height: 148px; padding: 10px; }
+  .plan-summary { font-size: 8px; }
+  .safe-label { font-size: 8px; }
+  .allergy-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-panel, .inspiration-panel { padding: 16px; }
+  .profile-foot { flex-wrap: wrap; }
+  .page-footer { gap: 12px; font-size: 8px; }
+  .recipe-dialog { padding: 17px; }
+  .recipe-item { align-items: flex-start; flex-direction: column; }
+  .recipe-item-action { width: 100%; }
+  .recipe-item-action select { max-width: none; flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
