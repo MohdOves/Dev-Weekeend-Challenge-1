@@ -12,7 +12,7 @@ Recipes are sample suggestions, not medical advice. Always check ingredient labe
 
 ## Demo
 
-**Live demo:** <!-- Add your deployed demo URL here -->
+**Live demo:** [gather-meal-planner.onrender.com](https://gather-meal-planner.onrender.com/)
 
 ### Deploy on Render
 
